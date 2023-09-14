@@ -80,7 +80,7 @@ async function pacienteGuardar(event){
 
     try {
         if(id > 0){
-            await pacientesActualizar(turno);
+            await pacientesActualizar(paciente);
         }else{
             await pacientesCrear(paciente);
         }
