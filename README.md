@@ -56,7 +56,7 @@ Para ejecutar el proyecto, utiliza el siguiente comando Maven:
 El servidor de desarrollo se ejecutará en http://localhost:8081. Puedes acceder a la documentación de Swagger en http://localhost:8081/swagger-ui.html.
 
 ## Configuración front
-En la carpeta resources/
+En la carpeta resources/static
 
 En el archivo config.json ubicar el atributo API_BASE_URL y allí poner la URL y el puerto donde se ejecuta el proyecjo de SpringBoot Clínica odontologica
 
