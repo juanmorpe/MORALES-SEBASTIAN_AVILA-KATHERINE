@@ -121,8 +121,8 @@ public class TurnoService implements ITurnoService {
 
         if (turnoAActualizar != null) {
 
-            turnoAActualizar.setPaciente(modelMapper.map(pacienteService.buscarPacientePorId(turnoModificacionEntradaDto.getIdPaciente()), Paciente.class));
-            turnoAActualizar.setOdontologo(modelMapper.map(odontologoService.buscarOdontologoPorId(turnoModificacionEntradaDto.getIdOdontologo()), Odontologo.class));
+            turnoAActualizar.setPaciente(modelMapper.map(pacienteService.buscarPacientePorId(turnoModificacionEntradaDto.getPacienteId()), Paciente.class));
+            turnoAActualizar.setOdontologo(modelMapper.map(odontologoService.buscarOdontologoPorId(turnoModificacionEntradaDto.getOdontologoId()), Odontologo.class));
             turnoAActualizar.setFechaYHora(turnoModificacionEntradaDto.getFechaYHora());
             turnoRepository.save(turnoAActualizar);
 

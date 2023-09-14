@@ -14,9 +14,9 @@ public class TurnoModificacionEntradaDto {
     @NotNull(message = "Debe proveerse el id del turno que se desea modificar")
     private Long id;
     @NotNull(message = "El paciente no puede ser nulo")
-    private Long idPaciente;
+    private Long PacienteId;
     @NotNull(message = "El odontologo no puede ser nulo")
-    private Long idOdontologo;
+    private Long OdontologoId;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     @FutureOrPresent(message = "La fecha no puede ser anterior al día de hoy")
     @NotNull(message = "Debe especificarse la fecha y hora del turno")
@@ -25,10 +25,10 @@ public class TurnoModificacionEntradaDto {
     public TurnoModificacionEntradaDto() {
     }
 
-    public TurnoModificacionEntradaDto(Long id, Long idPaciente, Long idOdontologo, LocalDateTime fechaYHora) {
+    public TurnoModificacionEntradaDto(Long id, Long PacienteId, Long OdontologoId, LocalDateTime fechaYHora) {
         this.id = id;
-        this.idPaciente = idPaciente;
-        this.idOdontologo = idOdontologo;
+        this.PacienteId = PacienteId;
+        this.OdontologoId = OdontologoId;
         this.fechaYHora = fechaYHora;
     }
 
@@ -41,20 +41,20 @@ public class TurnoModificacionEntradaDto {
     }
 
 
-    public Long getIdPaciente() {
-        return idPaciente;
+    public Long getPacienteId() {
+        return PacienteId;
     }
 
-    public void setIdPaciente(Long idPaciente) {
-        this.idPaciente = idPaciente;
+    public void setPacienteId(Long PacienteId) {
+        this.PacienteId = PacienteId;
     }
 
-    public Long getIdOdontologo() {
-        return idOdontologo;
+    public Long getOdontologoId() {
+        return OdontologoId;
     }
 
-    public void setIdOdontologo(Long idOdontologo) {
-        this.idOdontologo = idOdontologo;
+    public void setOdontologoId(Long OdontologoId) {
+        this.OdontologoId = OdontologoId;
     }
 
     public LocalDateTime getFechaYHora() {
