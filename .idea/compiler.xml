@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$USER_HOME$/Downloads/clinica-odontologica (1)/clinica-odontologica/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="clinica-odontologica (1)" />
+        <module name="clinica-odontologica (2)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="clinica-odontologica" target="17" />
+      <module name="ClinicaOdontologicaMavenJava" target="20" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="clinica-odontologica" options="-parameters" />
+      <module name="clinica-odontologica (1)" options="-parameters" />
+      <module name="clinica-odontologica (2)" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Odontológica</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1  class="logo">Clínica Odontológica</h1>
+    </header>
+    <nav class="nav-hidden" id="nav">
+        <ul>
+            <li><a href="#" id="odontologosMenu">Odontólogos</a></li>
+            <li><a href="#" id="pacientesMenu">Pacientes</a></li>
+            <li><a href="#" id="turnosMenu">Turnos</a></li>
+        </ul>
+    </nav>
+    <div id="mensaje" class="mensaje"></div>
+    <main>        
+        <section id="odontologosFormulario" style="display: none;">
+            <h2>Formulario de Odontólogos</h2>
+            <button id="crearOdontologoButton" class="boton-crear">Crear Nuevo Odontólogo</button>
+            <!-- Formulario para crear un nuevo odontólogo -->
+            <form id="crearOdontologoForm">
+                <label for="matriculaOdontologo">Matrícula:</label>
+                <input type="text" id="matriculaOdontologo" name="matriculaOdontologo" required pattern="^[A-Z]{2}-\d{1,3}\d*$" minlength="10" maxlength="50"><br><br>
+
+                <label for="nombreOdontologo">Nombre:</label>
+                <input type="text" id="nombreOdontologo" name="nombreOdontologo" required maxlength="50"><br><br>
+
+                <label for="apellidoOdontologo">Apellido:</label>
+                <input type="text" id="apellidoOdontologo" name="apellidoOdontologo" required maxlength="50"><br><br>
+
+                <input type="hidden" id="idOdontologo">
+                <button type="submit">Guardar Odontólogo</button>
+            </form>
+
+        </section>
+        
+        <section id="pacientesFormulario" style="display: none;">
+            <h2>Formulario de Pacientes</h2>
+            <button id="crearPacienteButton" class="boton-crear">Crear Nuevo Paciente</button>
+
+            <!-- Formulario para crear un nuevo paciente -->
+            <div class="formulario-container">
+                <form id="crearPacienteForm">
+                    <div class="formulario-columna">
+                        <h2>Paciente</h2>
+                        <label for="nombrePaciente">Nombre:</label>
+                        <input type="text" id="nombrePaciente" name="nombrePaciente" required minlength="2" maxlength="50"><br><br>
+                
+                        <label for="apellidoPaciente">Apellido:</label>
+                        <input type="text" id="apellidoPaciente" name="apellidoPaciente" required maxlength="50"><br><br>
+                
+                        <label for="dniPaciente">DNI:</label>
+                        <input type="number" id="dniPaciente" name="dniPaciente" required min="0" max="99999999"><br><br>
+                
+                        <label for="fechaIngresoPaciente">Fecha de Ingreso:</label>
+                        <input type="date" id="fechaIngresoPaciente" name="fechaIngresoPaciente" required><br><br>
+                    </div>
+
+                    <div class="formulario-columna">        
+                        <h2>Domicilio</h2>
+                
+                        <label for="callePaciente">Calle:</label>
+                        <input type="text" id="callePaciente" name="domicilio.calle" required><br><br>
+                
+                        <label for="numeroPaciente">Número:</label>
+                        <input type="number" id="numeroPaciente" name="domicilio.numero" required min="0" max="99999999"><br><br>
+                
+                        <label for="localidadPaciente">Localidad:</label>
+                        <input type="text" id="localidadPaciente" name="domicilio.localidad" required><br><br>
+                
+                        <label for="provinciaPaciente">Provincia:</label>
+                        <input type="text" id="provinciaPaciente" name="domicilio.provincia" required><br><br>
+                
+                        <input type="hidden" id="idPaciente">
+                        <input type="hidden" id="idDomicilio">
+                        <button type="submit">Guardar Paciente</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <section id="turnosFormulario" style="display: none;">
+            <h2>Formulario de Turnos</h2>
+            <button id="crearTurnoButton" class="boton-crear">Crear Nuevo Turno</button>
+            <!-- Formulario para crear un nuevo turno -->
+            <form id="crearTurnoForm">
+                <label for="pacienteIdTurno">Paciente:</label>
+                <select id="pacienteIdTurno" name="pacienteIdTurno" required>
+                </select><br><br>
+        
+                <label for="odontologoIdTurno">Odontólogo:</label>
+                <select id="odontologoIdTurno" name="odontologoIdTurno" required>
+                </select><br><br>
+        
+                <label for="fechaYHoraTurno">Fecha y Hora:</label>
+                <input type="datetime-local" id="fechaYHoraTurno" name="fechaYHoraTurno" required><br><br>
+        
+                <input type="hidden" id="idTurno">
+                <button type="submit">Guardar Turno</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>        
+        <section id="odontologosLista" style="display: none;">
+            <!-- Lista de odontólogos -->
+            <h2>Lista de Odontólogos</h2>
+            <div id="listaOdontologos"></div>
+
+        </section>
+
+        <section id="pacientesLista" style="display: none;">
+            <!-- Lista de pacientes -->
+            <h2>Lista de Pacientes</h2>
+            <ul id="listaPacientes"></ul>
+        </section>
+        
+        <section id="turnosLista" style="display: none;">
+            <!-- Lista de turnos -->
+            <h2>Lista de Turnos</h2>
+            <ul id="listaTurnos"></ul>
+        </section>
+    </footer>
+    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/service/request.js"></script>
+
+    <script src="./scripts/service/odontologoService.js"></script>
+    <script src="./scripts/controller/odontologoController.js"></script>
+
+    <script src="./scripts/service/pacienteService.js"></script>
+    <script src="./scripts/controller/pacienteController.js"></script>
+
+    <script src="./scripts/service/turnoService.js"></script>
+    <script src="./scripts/controller/turnoController.js"></script>
+</body>
+</html>
