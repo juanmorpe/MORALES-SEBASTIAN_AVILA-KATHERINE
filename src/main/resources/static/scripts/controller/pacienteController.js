@@ -79,7 +79,12 @@ async function pacienteGuardar(event){
     };
 
     try {
-        await pacientesCrear(paciente);
+        if(id > 0){
+            await pacientesActualizar(turno);
+        }else{
+            await pacientesCrear(paciente);
+        }
+
         limpiarPacienteForm();
 
         pacientesListar();
