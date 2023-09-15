@@ -70,7 +70,7 @@ async function pacienteGuardar(event){
         dni,
         fechaIngreso,
         domicilio: {
-            domiclioId,
+            "id":domiclioId,
             calle,
             numero,
             localidad,
